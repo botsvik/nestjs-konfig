@@ -1,0 +1,59 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.12/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**", "!node_modules", "!dist"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "useImportType": "off"
+      },
+      "complexity": {
+        "noStaticOnlyClass": "off"
+      },
+      "correctness": {
+        "useHookAtTopLevel": "off"
+      }
+    }
+  },
+  "javascript": {
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":URL:",
+              ":NODE:",
+              ["@nestjs", "@nestjs/**"],
+              [":PACKAGE:"],
+              ":BLANK_LINE:",
+              ":BLANK_LINE:",
+              ":PATH:"
+            ],
+            "identifierOrder": "natural"
+          }
+        }
+      }
+    }
+  }
+}
